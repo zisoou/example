@@ -1,0 +1,49 @@
+/* #banner */
+#banner{
+  min-width: 1300px;
+  background-color: #f6f6f6;
+  padding:100px 0;
+  text-align: center;
+}
+
+#banner > h1{
+  font-size: 36px;
+  font-weight:500;
+  margin-bottom: 20px;
+}
+#banner > p{
+  color:#787878;
+  line-height: 1.7;
+}
+
+/* #works */
+#works > .wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#works .box{
+  width:325px;
+  height:280px;
+  position:relative; /*pos:abs의 기준이 됨*/
+  overflow: hidden; 
+  /* 컨텐츠 영역 밖으로 넘어가는 요소들을 가려줌 */
+}
+
+#works .box > .overlay{
+  position:absolute;
+  top:0; left:0; bottom:0; right:0;
+  /* position 속성을 적용한 부모(조상)요소와 같은 크기로 설정 */
+  background: #10c9c388 url(../img/eye.png) center no-repeat;
+  /* 폴더 이름 ../는 위의 폴더로 나가서 두번째 나오는 폴더명을 검색 */
+  /*색상 코드의 마지막 두자리는 알파채널 ff불투명 00투명*/
+  opacity: 0; visibility: hidden;
+  transform: scale(0) rotate(-720deg);
+  transition:all 0.3s; /*변환효과 적용*/
+}
+
+#works .box:hover .overlay{
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  }
